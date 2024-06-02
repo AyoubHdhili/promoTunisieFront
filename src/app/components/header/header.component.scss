@@ -1,0 +1,47 @@
+.header-logo .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.header-logo .logo-img {
+    width: auto;
+    height: 90px; /* Adjust the height as needed */
+    width: 150px;
+}
+
+#header {
+    padding: 10px 0; /* Adjust the padding as needed */
+    background: #021024; /* Adjust the background color as needed */
+}
+
+#top-header{
+    background: #010c1b;
+}
+
+.header-ctn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+        /* Ensure specificity to override existing styles */
+        .header-search .search-btn {
+            background-color: #145374; /* Blue color */
+            color: white; /* White text */
+            border: none; /* Remove border */
+            padding: 10px 20px; /* Add padding */
+            cursor: pointer; /* Pointer cursor */
+        }
+
+        /* Change the button color on hover */
+        .header-search .search-btn:hover {
+            background-color: #0056b3; /* Darker blue for hover state */
+        }
+
+        /* Change the button color on active state */
+        .header-search .search-btn:active {
+            background-color: #004085; /* Even darker blue for active state */
+        }

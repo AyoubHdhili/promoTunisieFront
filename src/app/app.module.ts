@@ -4,29 +4,33 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HomeComponent } from './pages/home/home.component';
+import { HomeComponent } from './pages/frontoffice/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SigninComponent } from './pages/signin/signin.component';
-import { StoreComponent } from './pages/store/store.component';
-import { CheckoutComponent } from './pages/checkout/checkout.component';
-import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { StoreComponent } from './pages/frontoffice/store/store.component';
+import { CheckoutComponent } from './pages/frontoffice/checkout/checkout.component';
+import { ProductDetailComponent } from './pages/frontoffice/product-detail/product-detail.component';
+import { FrontofficeModule } from '../features/frontoffice/frontoffice.module';
+import { FrontofficeComponent } from './pages/frontoffice/frontoffice.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     HeaderComponent,
     FooterComponent,
     SigninComponent,
-    StoreComponent,
-    CheckoutComponent,
-    ProductDetailComponent,
+    FrontofficeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FrontofficeModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

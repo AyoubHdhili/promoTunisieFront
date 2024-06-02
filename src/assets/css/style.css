@@ -93,7 +93,7 @@ ul, ol {
 .primary-btn {
   display: inline-block;
   padding: 12px 30px;
-  background-color: #D10024;
+  background-color: #145374;
   border: none;
   border-radius: 40px;
   color: #FFF;
@@ -335,13 +335,13 @@ textarea.input {
   display: block;
   width: 0%;
   height: 2px;
-  background-color: #D10024;
+  background-color: #145374;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
 }
 
 .section-tab-nav li.active a {
-  color: #D10024;
+  color: #145374;
 }
 
 .section-tab-nav li a:hover:after, .section-tab-nav li a:focus:after, .section-tab-nav li.active a:after {
@@ -725,7 +725,7 @@ textarea.input {
   bottom: 0;
   left: 0px;
   width: 60%;
-  background: #D10024;
+  background: #145374;
   opacity: 0.9;
   -webkit-transform: skewX(-45deg);
   -ms-transform: skewX(-45deg);
@@ -739,7 +739,7 @@ textarea.input {
   bottom: 0;
   left: 1px;
   width: 100%;
-  background: #D10024;
+  background: #145374;
   opacity: 0.9;
   -webkit-transform: skewX(-45deg) translateX(-100%);
   -ms-transform: skewX(-45deg) translateX(-100%);
@@ -862,8 +862,8 @@ textarea.input {
 }
 
 .product:hover {
-  -webkit-box-shadow: 0px 0px 6px 0px #E4E7ED, 0px 0px 0px 2px #D10024;
-  box-shadow: 0px 0px 6px 0px #E4E7ED, 0px 0px 0px 2px #D10024;
+  -webkit-box-shadow: 0px 0px 6px 0px #E4E7ED, 0px 0px 0px 2px #021024;
+  box-shadow: 0px 0px 6px 0px #E4E7ED, 0px 0px 0px 2px #021024;
 }
 
 .product .product-img {
@@ -981,7 +981,7 @@ textarea.input {
 
 .product .product-body .product-btns>button:hover {
   background-color: #E4E7ED;
-  color: #D10024;
+  color: #145374;
   border-radius: 50%;
 }
 
@@ -1020,7 +1020,7 @@ textarea.input {
   right: 1px;
   bottom: 1px;
   padding: 15px;
-  background: #1e1f29;
+  background: #021024;
   text-align: center;
   -webkit-transform: translateY(0%);
   -ms-transform: translateY(0%);
@@ -1041,7 +1041,7 @@ textarea.input {
   border: 2px solid transparent;
   height: 40px;
   padding: 0 30px;
-  background-color: #ef233c;
+  background-color: #007bff;
   color: #FFF;
   text-transform: uppercase;
   font-weight: 700;
@@ -1057,15 +1057,15 @@ textarea.input {
   width: 40px;
   height: 40px;
   line-height: 38px;
-  color: #D10024;
+  color: #007bff;
   opacity: 0;
   visibility: hidden;
 }
 
 .product .add-to-cart .add-to-cart-btn:hover {
   background-color: #FFF;
-  color: #D10024;
-  border-color: #D10024;
+  color: #007bff;
+  border-color: #007bff;
   padding: 0px 30px 0px 50px;
 }
 
@@ -1327,8 +1327,8 @@ textarea.input {
 }
 
 .store-grid li.active {
-  background-color: #D10024;
-  border-color: #D10024;
+  background-color: #145374;
+  border-color: white;
   color: #FFF;
   cursor: default;
 }
@@ -1365,8 +1365,8 @@ textarea.input {
 }
 
 .store-pagination li.active {
-  background-color: #D10024;
-  border-color: #D10024;
+  background-color: #145374;
+  border-color: white;
   color: #FFF;
   font-weight: 500;
   cursor: default;
@@ -1535,7 +1535,7 @@ textarea.input {
   border: 2px solid transparent;
   height: 40px;
   padding: 0 30px;
-  background-color: #ef233c;
+  background-color: #145374;
   color: #FFF;
   text-transform: uppercase;
   font-weight: 700;
@@ -1551,15 +1551,15 @@ textarea.input {
   width: 40px;
   height: 40px;
   line-height: 38px;
-  color: #D10024;
+  color: #145374;
   opacity: 0;
   visibility: hidden;
 }
 
 .product-details .add-to-cart .add-to-cart-btn:hover {
   background-color: #FFF;
-  color: #D10024;
-  border-color: #D10024;
+  color: #145374;
+  border-color: #145374;
   padding: 0px 30px 0px 50px;
 }
 
@@ -1649,7 +1649,7 @@ textarea.input {
 }
 
 #product-tab .tab-nav li.active a {
-  color: #D10024;
+  color: #145374;
 }
 
 #product-tab .tab-nav li a:after {
@@ -1657,7 +1657,7 @@ textarea.input {
   display: block;
   width: 0%;
   height: 2px;
-  background-color: #D10024;
+  background-color: #145374;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
 }
@@ -1960,7 +1960,7 @@ textarea.input {
   width: 160px;
   height: 40px;
   font-weight: 700;
-  background: #D10024;
+  background: #145374;
   color: #FFF;
   border: none;
   border-radius: 0px 40px 40px 0px;
@@ -2002,12 +2002,12 @@ textarea.input {
 ===========================================================*/
 
 #footer {
-  background: #15161D;
+  background: #010c1b;
   color: #B9BABC;
 }
 
 #bottom-footer {
-  background: #1E1F29;
+  background: #021024;
 }
 
 .footer {
