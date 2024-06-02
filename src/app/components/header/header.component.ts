@@ -15,5 +15,10 @@ export class HeaderComponent implements OnInit{
     }
   }
 
+  logout() {
+      sessionStorage.clear();
+      this.token = false;
+    }
+
 
 }

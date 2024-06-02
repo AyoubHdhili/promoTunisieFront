@@ -3,6 +3,7 @@ export class User {
     lastName!: string;
     email!: string;
     password!: string;
+    confirmPassword!: string;
     role!: 'Client' | 'Admin';
     address!: string;
     phone!: number;
