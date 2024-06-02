@@ -1,0 +1,119 @@
+<section>
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+                <form class="mx-1 mx-md-4" #form="ngForm">
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example1c" >Nom</label>
+                        <input type="text" id="form3Example1c" class="form-control" name="lastname" #lastname="ngModel" [(ngModel)]="user.lastName" required/>
+                        <div *ngIf="lastname.invalid && (lastname.touched || lastname.dirty)">
+                          <div class="m-3 alert alert-danger" *ngIf="lastname.errors!['required']"> Nom est obligatoire !!</div>
+                          <div class="m-3 alert alert-danger" *ngIf="lastname.errors!['minlength']"> Nom doit avoir au moins 3 caractéres !!</div>
+                          <div class="m-3 alert alert-danger" *ngIf="lastname.errors!['pattern']"> Nom ne doit contenir que des caractéres !!</div>                        
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example1c">Prenom</label>
+                        <input type="text" id="form3Example1c" class="form-control" name="firstname" #firstname="ngModel" [(ngModel)]="user.firstName" required pattern="[a-zA-Z]*" minlength="3"/>
+                        <div *ngIf="firstname.invalid && (firstname.touched || firstname.dirty)">
+                          <div class="m-3 alert alert-danger" *ngIf="firstname.errors!['required']"> Prenom est obligatoire !!</div>
+                          <div class="m-3 alert alert-danger" *ngIf="firstname.errors!['minlength']"> Prenom doit avoir au moins 3 caractéres !!</div>
+                          <div class="m-3 alert alert-danger" *ngIf="firstname.errors!['pattern']"> Prenom ne doit contenir que des caractéres !!</div>                        
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example3c">Email</label>
+                        <input type="email" id="form3Example3c" class="form-control" name="email" #email="ngModel" [(ngModel)]="user.email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+                        <div *ngIf="email.invalid && (email.touched || email.dirty)">
+                          <div class="m-3 alert alert-danger" *ngIf="email.errors!['required']"> Email is required !!</div>
+                          <div class="m-3 alert alert-danger" *ngIf="email.errors!['pattern']"> Not a valid Email !!</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-location-dot fa-lg me-3 fa-fw"></i>
+                      <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example1c">Adresse</label>
+                        <input type="text" id="form3Example1c" class="form-control" name="address" #address="ngModel" [(ngModel)]="user.address" required/>
+                        <div *ngIf="address.invalid && (address.touched || address.dirty)">
+                          <div class="m-3 alert alert-danger" *ngIf="address.errors!['required']"> Address est obligatoire !!</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-phone fa-lg me-3 fa-fw"></i>
+                      <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example1c">Numero telephone</label>
+                        <input type="text" id="form3Example1c" class="form-control" name="phone" #phone="ngModel" [(ngModel)]="user.phone" required minlength="8" maxlength="8"/>
+                        <div *ngIf="phone.invalid && (phone.touched || phone.dirty)">
+                          <div class="m-3 alert alert-danger" *ngIf="phone.errors!['required']"> Phone est obligatoire !!</div>
+                          <div class="m-3 alert alert-danger" *ngIf="phone.errors!['minlength']"> Phone doit avoir au moins 8 numéro !!</div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example4c">Mot de passe</label>
+                        <input type="password" id="form3Example4c" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password" required minlength="8"/>
+                        <div *ngIf="password.invalid && (password.touched || password.dirty)">
+                          <div class="m-3 alert alert-danger" *ngIf="password.errors!['required']"> Mot de passe est obligatoire !!</div>
+                          <div class="m-3 alert alert-danger" *ngIf="password.errors!['minlength']"> Mot de passe doit avoir au moins 8 caractéres !!</div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                      <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example4cd">confirmation mot de passe</label>
+                        <input type="password" id="form3Example4cd" class="form-control" name="confirm" #confirm="ngModel" [(ngModel)]="confirmPassword" required/>
+                        <div *ngIf="confirm.invalid && (confirm.touched || confirm.dirty)">
+                          <div class="m-3 alert alert-danger" *ngIf="confirm.errors!['required']"> Mot de passe est obligatoire !!</div>
+                          <div class="m-3 alert alert-danger" *ngIf="confirm.errors!['minlength']"> Mot de passe et confirm mot de passe ne corresspondent pas !!</div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="form-check d-flex justify-content-center mb-5">
+                      <input class="form-check-input me-2" type="checkbox" id="termsCheckbox" name="termsCheckbox" required/>
+                      <label class="form-check-label" for="form2Example3">
+                        J'accepte toutes <a href="#!">les Conditions d'utilisation</a>
+                      </label>
+                    </div>
+  
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg" [disabled]="form.invalid" (click)="submit()">Register</button>
+                    </div>
+  
+                  </form>
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                  <img src="assets/img/signup.png" class="img-fluid" alt="Sample image">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

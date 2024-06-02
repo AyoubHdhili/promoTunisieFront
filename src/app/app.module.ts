@@ -15,6 +15,9 @@ import { FrontofficeModule } from '../features/frontoffice/frontoffice.module';
 import { FrontofficeComponent } from './pages/frontoffice/frontoffice.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +26,16 @@ import { MatDialogModule } from '@angular/material/dialog';
     FooterComponent,
     SigninComponent,
     FrontofficeComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FrontofficeModule,
+    FormsModule,
     MatDialogModule,
+    HttpClientModule,
     BrowserAnimationsModule
   ],
   providers: [],
