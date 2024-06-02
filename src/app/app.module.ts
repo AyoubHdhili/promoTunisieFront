@@ -11,7 +11,7 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { StoreComponent } from './pages/frontoffice/store/store.component';
 import { CheckoutComponent } from './pages/frontoffice/checkout/checkout.component';
 import { ProductDetailComponent } from './pages/frontoffice/product-detail/product-detail.component';
-import { FrontofficeModule } from '../features/frontoffice/frontoffice.module';
+import { FrontofficeModule } from './features/frontoffice/frontoffice.module';
 import { FrontofficeComponent } from './pages/frontoffice/frontoffice.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
