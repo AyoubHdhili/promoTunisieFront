@@ -10,6 +10,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 const routes: Routes = [
   {path:'', loadChildren: ()=> import('./features/frontoffice/frontoffice.module').then(m=>m.FrontofficeModule)},
   {path: '', redirectTo: '', pathMatch: 'full'},
+  {path:'admin', loadChildren: ()=> import('./features/backoffice/backoffice.module').then(m=>m.BackofficeModule)},
   {path:'signin', component:SigninComponent},
   {path:'signup', component:SignupComponent},
 ];

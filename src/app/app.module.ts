@@ -19,14 +19,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ToastrModule } from 'ngx-toastr';
-
+import { BackofficeModule } from './features/backoffice/backoffice.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
     SigninComponent,
-    FrontofficeComponent,
     SignupComponent,
   ],
   imports: [
@@ -38,7 +35,8 @@ import { ToastrModule } from 'ngx-toastr';
     MatDialogModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    BackofficeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
