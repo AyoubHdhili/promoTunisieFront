@@ -20,11 +20,13 @@ import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BackofficeModule } from './features/backoffice/backoffice.module';
+import { ProductService } from './services/ProduitService/produit.service';
 @NgModule({
   declarations: [
     AppComponent,
     SigninComponent,
     SignupComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,7 @@ import { BackofficeModule } from './features/backoffice/backoffice.module';
     ToastrModule.forRoot(),
     BackofficeModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,20 +1,33 @@
-<div class="page-wrapper pagehead">
-    <div class="content">
-    <div class="page-header">
-    <div class="row">
-    <div class="col-sm-12">
-    <h3 class="page-title">Blank Page</h3>
-    <ul class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-    <li class="breadcrumb-item active">Blank Page</li>
-    </ul>
+<div class="container">
+    <h2>Products</h2>
+  
+    <div class="form-container">
+      <h2>Add New Product</h2>
+      <form (ngSubmit)="addProduct()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input [(ngModel)]="newProduct.name" id="name" name="name" placeholder="Enter product name" required>
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input [(ngModel)]="newProduct.price" id="price" name="price" type="number" placeholder="Enter product price" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea [(ngModel)]="newProduct.description" id="description" name="description" placeholder="Enter product description" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <input [(ngModel)]="newProduct.category" id="category" name="category" placeholder="Enter product category" required>
+        </div>
+        <div class="form-group">
+          <label for="stock">Stock</label>
+          <input [(ngModel)]="newProduct.stock" id="stock" name="stock" type="number" placeholder="Enter product stock" required>
+        </div>
+        <button type="submit" class="add-btn">
+          <i class="fas fa-plus-circle"></i> Add Product
+        </button>
+      </form>
     </div>
-    </div>
-    </div>
-    <div class="row">
-    <div class="col-sm-12">
-    Contents here
-    </div>
-    </div>
-    </div>
-    </div>
+  </div>
+  

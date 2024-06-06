@@ -5,6 +5,10 @@ import { HeaderBackComponent } from 'src/app/pages/backoffice/header-back/header
 import { AdminDashboardComponent } from 'src/app/pages/backoffice/admin-dashboard/admin-dashboard.component';
 import { SidebarBackComponent } from 'src/app/pages/backoffice/sidebar-back/sidebar-back.component';
 import { ProductBackAddComponent } from 'src/app/pages/backoffice/product-back-add/product-back-add.component';
+import { ProductsComponent } from 'src/app/pages/backoffice/products/products.component';
+import { FormsModule } from '@angular/forms'; // Ajoutez cette ligne
+import { ProductService } from 'src/app/services/ProduitService/produit.service';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 
@@ -13,11 +17,16 @@ import { ProductBackAddComponent } from 'src/app/pages/backoffice/product-back-a
     HeaderBackComponent,
     AdminDashboardComponent,
     SidebarBackComponent,
-    ProductBackAddComponent
+    ProductBackAddComponent,
+    ProductsComponent
   ],
   imports: [
     CommonModule,
-    BackofficeRoutingModule
-  ]
+    BackofficeRoutingModule,
+    FormsModule // Ajoutez cette ligne
+
+  ],
+  providers: [ProductService],
+
 })
 export class BackofficeModule { }
