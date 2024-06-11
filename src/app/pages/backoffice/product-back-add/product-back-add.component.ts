@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/services/ProduitService/produit.service'
 })
 export class ProductBackAddComponent implements OnInit {
   newProduct = {
-    _id: '',  // Add this line
+    _id: '',
     name: '',
     price: 0,
     description: '',
@@ -17,6 +17,8 @@ export class ProductBackAddComponent implements OnInit {
     stock: 0,
     reviews: []
   };
+
+  selectedFiles: File[] = [];
 
   constructor(private productService: ProductService, private router: Router) { }
 
@@ -28,9 +30,24 @@ export class ProductBackAddComponent implements OnInit {
     }
   }
 
+  onFilesChange(event: any): void {
+    this.selectedFiles = event.target.files;
+  }
+
   addProduct(): void {
+    const formData = new FormData();
+    formData.append('name', this.newProduct.name);
+    formData.append('price', this.newProduct.price.toString());
+    formData.append('description', this.newProduct.description);
+    formData.append('category', this.newProduct.category);
+    formData.append('stock', this.newProduct.stock.toString());
+
+    Array.from(this.selectedFiles).forEach((file, index) => {
+      formData.append('images', file, file.name);
+    });
+
     if (this.newProduct._id) {
-      this.productService.updateProduct(this.newProduct._id, this.newProduct).subscribe(
+      this.productService.updateProduct(this.newProduct._id, formData).subscribe(
         response => {
           console.log(response);
           this.router.navigate(['/admin/dashboard/productList']);
@@ -38,7 +55,7 @@ export class ProductBackAddComponent implements OnInit {
         error => console.error('Error updating product', error)
       );
     } else {
-      this.productService.addProduct(this.newProduct).subscribe(
+      this.productService.addProduct(formData).subscribe(
         response => {
           console.log(response);
           this.router.navigate(['/admin/dashboard/productList']);

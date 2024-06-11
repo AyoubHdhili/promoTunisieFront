@@ -1,33 +1,42 @@
 <div class="container">
-    <h2>Products</h2>
-  
-    <div class="form-container">
-      <h2>Add New Product</h2>
-      <form (ngSubmit)="addProduct()">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input [(ngModel)]="newProduct.name" id="name" name="name" placeholder="Enter product name" required>
+  <h2>Products</h2>
+  <div class="form-container">
+    <h2>Ajouter Produit</h2>
+    <form (ngSubmit)="addProduct()" enctype="multipart/form-data">
+      <!-- Other form fields -->
+      <div class="form-group">
+        <label for="name">Nom</label>
+        <input [(ngModel)]="newProduct.name" id="name" name="name" type="text" placeholder="Nom du produit" required>
+      </div>
+      <div class="form-group">
+        <label for="price">Prix</label>
+        <input [(ngModel)]="newProduct.price" id="price" name="price" type="number" placeholder="Prix du produit" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" [(ngModel)]="newProduct.description" id="description" name="description" placeholder="Enter product description" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="category">Categorie</label>
+        <input [(ngModel)]="newProduct.category" id="category" name="category" type="text" placeholder="Enter product category" required>
+      </div>
+      <div class="form-group">
+        <label for="stock">Stock</label>
+        <input [(ngModel)]="newProduct.stock" id="stock" name="stock" type="number" placeholder="Enter product stock" required>
+      </div>
+      <div class="form-group">
+        <label>Image de produit</label>
+        <div class="image-upload">
+          <input type="file" multiple (change)="onFilesChange($event)">
+          <div class="image-uploads">
+            <img src="assets/admin/img/icons/upload.svg" alt="img">
+            <h4>Drag and drop files to upload</h4>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="price">Price</label>
-          <input [(ngModel)]="newProduct.price" id="price" name="price" type="number" placeholder="Enter product price" required>
-        </div>
-        <div class="form-group">
-          <label for="description">Description</label>
-          <textarea [(ngModel)]="newProduct.description" id="description" name="description" placeholder="Enter product description" rows="4" required></textarea>
-        </div>
-        <div class="form-group">
-          <label for="category">Category</label>
-          <input [(ngModel)]="newProduct.category" id="category" name="category" placeholder="Enter product category" required>
-        </div>
-        <div class="form-group">
-          <label for="stock">Stock</label>
-          <input [(ngModel)]="newProduct.stock" id="stock" name="stock" type="number" placeholder="Enter product stock" required>
-        </div>
-        <button type="submit" class="add-btn">
-          <i class="fas fa-plus-circle"></i> Add Product
-        </button>
-      </form>
-    </div>
+      </div>
+      <button type="submit" class="add-btn">
+        <i class="fas fa-plus-circle"></i> Add Product
+      </button>
+    </form>
   </div>
-  
+</div>

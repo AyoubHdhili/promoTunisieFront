@@ -9,7 +9,7 @@
                 <li><a href=""><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
             </ul>
             <ul class="header-links pull-right">
-                <li *ngIf="token"><a href=""><i class="fa fa-user-o"></i> My Account</a> <a href="" class="mx-3" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                <li *ngIf="token"><a href=""><i class="fa fa-user-o"></i> {{username}}</a> <a href="" class="mx-3" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i></a></li>
                 <li *ngIf="!token"><a href="" [routerLink]="['/signin']"><i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In</a></li>
             </ul>
         </div>
@@ -55,7 +55,7 @@
                         <div>
                             <a href="">
                                 <i class="fa fa-heart-o"></i>
-                                <span>Your Wishlist</span>
+                                <span>liste des souhaits</span>
                                 <div class="qty">2</div>
                             </a>
                         </div>
@@ -65,7 +65,7 @@
                         <div class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                 <i class="fa fa-shopping-cart"></i>
-                                <span>Your Cart</span>
+                                <span>Mon Panier</span>
                                 <div class="qty">3</div>
                             </a>
                             <div class="cart-dropdown">

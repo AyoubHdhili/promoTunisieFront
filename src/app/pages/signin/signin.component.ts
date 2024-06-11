@@ -22,7 +22,12 @@ export class SigninComponent {
         timeOut: 5000,
         positionClass:'toast-top-right'
       })
+      const token = JSON.parse(atob(res.token.split('.')[1])) as User;
+      if(token.role === 'Client'){
       this.router.navigate(['']);
+      } else{
+        this.router.navigate(['/dashboard/home']);
+      }
     },(err) => {
       this.toast.error( "verify email or password !!", "Login Failed", {
         timeOut: 3000,

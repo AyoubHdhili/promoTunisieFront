@@ -9,6 +9,7 @@ import { ProductsComponent } from 'src/app/pages/backoffice/products/products.co
 import { FormsModule } from '@angular/forms'; // Ajoutez cette ligne
 import { ProductService } from 'src/app/services/ProduitService/produit.service';
 import { BrowserModule } from '@angular/platform-browser';
+import { LandingComponent } from 'src/app/pages/backoffice/landing/landing.component';
 
 
 
@@ -18,7 +19,8 @@ import { BrowserModule } from '@angular/platform-browser';
     AdminDashboardComponent,
     SidebarBackComponent,
     ProductBackAddComponent,
-    ProductsComponent
+    ProductsComponent,
+    LandingComponent
   ],
   imports: [
     CommonModule,
