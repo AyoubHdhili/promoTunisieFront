@@ -51,7 +51,7 @@ export class CartService {
     if (cartLocalStorage){
     let info:CartPublic = JSON.parse(cartLocalStorage);
 
-    if(info != null && info != undefined && info.prodData[0].incart != 0){
+    if(info != null && info != undefined && info.prodData[0].incart !== 0){
       this.cartDataClient = info;
 
       this.cartDataClient.prodData.forEach(p => {
@@ -84,7 +84,7 @@ export class CartService {
       
       if(this.cartDataServer.data[0].product === undefined){
         this.cartDataServer.data[0].product = prod;
-        this.cartDataServer.data[0].numInCart = quantity != undefined ? quantity : 1;
+        this.cartDataServer.data[0].numInCart = quantity !== undefined ? quantity : 1;
         this.calculateTotal();
         this.cartDataClient.prodData[0].incart = this.cartDataServer.data[0].numInCart;
         this.cartDataClient.prodData[0].id = prod._id;
@@ -100,18 +100,21 @@ export class CartService {
       }else{
         let index = this.cartDataServer.data.findIndex(p=>p.product._id === prod._id);
         if(index !== -1){
-          if(quantity != undefined && quantity <= prod.stock){
+          if(quantity !== undefined && quantity <= prod.stock){
             this.cartDataServer.data[index].numInCart = this.cartDataServer.data[index].numInCart < prod.stock ? quantity : prod.stock;
           } else{
             this.cartDataServer.data[index].numInCart < prod.stock ? this.cartDataServer.data[index].numInCart ++ : prod.stock;
           }
           this.cartDataClient.prodData[index].incart = this.cartDataServer.data[index].numInCart;
+          this.calculateTotal();
+          this.cartDataClient.total = this.cartDataServer.total;
+          localStorage.setItem('cart', JSON.stringify(this.cartDataClient));
           this.toast.info(`${prod.name} quantity updated in the cart.`, "Product Updated", {
             timeOut: 1500,
             progressBar: true,
             progressAnimation: 'increasing',
             positionClass: 'toast-top-right'
-          })
+          });
         } else {
         this.cartDataServer.data.push({
           numInCart:1,
@@ -122,7 +125,7 @@ export class CartService {
           incart:1,
           id:prod._id
         });
-
+        localStorage.setItem('cart', JSON.stringify(this.cartDataClient));
         this.toast.success(`${prod.name} added to the cart.`, "Product Added", {
           timeOut: 1500,
           progressBar: true,
@@ -165,6 +168,7 @@ export class CartService {
     if(window.confirm('are you sure you want to delete the product ??')){
       this.cartDataServer.data.splice(index, 1);
       this.cartDataClient.prodData.splice(index, 1);
+      this.calculateTotal();
       this.cartDataClient.total = this.cartDataServer.total;
 
       if(this.cartDataClient.total === 0){

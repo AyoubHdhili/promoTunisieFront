@@ -9,6 +9,7 @@ import { HomeComponent } from 'src/app/pages/frontoffice/home/home.component';
 import { CheckoutComponent } from 'src/app/pages/frontoffice/checkout/checkout.component';
 import { ProductDetailComponent } from 'src/app/pages/frontoffice/product-detail/product-detail.component';
 import { StoreComponent } from 'src/app/pages/frontoffice/store/store.component';
+import { CartComponent } from 'src/app/pages/frontoffice/cart/cart.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { StoreComponent } from 'src/app/pages/frontoffice/store/store.component'
     HomeComponent,
     CheckoutComponent,
     ProductDetailComponent,
-    StoreComponent
+    StoreComponent,
+    CartComponent
   ],
   imports: [
     CommonModule,

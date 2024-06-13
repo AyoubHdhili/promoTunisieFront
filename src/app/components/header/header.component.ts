@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { jwtDecode } from 'jwt-decode';
+import { CartServer } from 'src/app/core/cart';
+import { CartService } from 'src/app/services/cartservice/cart.service';
 
 interface TokenPayload {
   email: string;
@@ -21,6 +23,10 @@ export class HeaderComponent implements OnInit{
 
   token: boolean = false;
   username: string ='';
+  cartData: CartServer = new CartServer();
+  cartTotal: number = 0;
+
+  constructor(public cartService: CartService){}
 
   ngOnInit(): void {
     const token = sessionStorage.getItem('token');
@@ -31,10 +37,14 @@ export class HeaderComponent implements OnInit{
       
       this.token = true;
     }
+
+    this.cartService.cartTotal$.subscribe(total => this.cartTotal = total);
+    this.cartService.cartData$.subscribe(data => this.cartData = data)
   }
 
   logout() {
       sessionStorage.clear();
+      localStorage.clear();
       this.token = false;
     }
 
