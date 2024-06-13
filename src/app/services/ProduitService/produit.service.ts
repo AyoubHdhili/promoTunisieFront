@@ -33,4 +33,8 @@ export class ProductService {
   deleteProduct(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
+
+  getProductWithCateory(category:string): Observable<Product>{
+    return this.http.get<Product>(`${this.apiUrl}/${category}`);
+  }
 }

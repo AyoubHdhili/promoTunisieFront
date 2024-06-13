@@ -21,6 +21,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BackofficeModule } from './features/backoffice/backoffice.module';
 import { ProductService } from './services/ProduitService/produit.service';
+import { NgxSpinnerModule } from 'ngx-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,7 @@ import { ProductService } from './services/ProduitService/produit.service';
     MatDialogModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    NgxSpinnerModule,
     ToastrModule.forRoot(),
     BackofficeModule
   ],
