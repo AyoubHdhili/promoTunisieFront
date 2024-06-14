@@ -22,6 +22,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BackofficeModule } from './features/backoffice/backoffice.module';
 import { ProductService } from './services/ProduitService/produit.service';
 import { NgxSpinnerModule } from 'ngx-spinner';
+
 @NgModule({
   declarations: [
     AppComponent,

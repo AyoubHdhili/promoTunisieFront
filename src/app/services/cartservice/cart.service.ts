@@ -211,6 +211,7 @@ export class CartService {
     this.cartDataServer.total = Total;
     this.cartTotal$.next(this.cartDataServer.total);
   }
+  CheckoutFromCart(){}
 
   /*CheckoutFromCart(userId: string){
     this.http.post(`${this.endPoint}orders/payment`, null).subscribe((res: {success: boolean}) => {

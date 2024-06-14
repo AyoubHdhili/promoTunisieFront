@@ -21,9 +21,7 @@ export class StoreComponent implements OnInit{
     })
   }
 
-  addToCart(id: string) {
-    console.log('here');
-    
+  addToCart(id: string) {    
     this.cartService.addProductToCart(id);
     }
 
