@@ -8,9 +8,10 @@ interface TokenPayload {
   username: string;
   role: string;
   id: string;
-  paid: boolean;
   iat: number;
   exp: number;
+  address: string;
+  phone: number;
 }
 
 @Component({
@@ -32,9 +33,7 @@ export class HeaderComponent implements OnInit{
     const token = sessionStorage.getItem('token');
     if (token) {
       const decodedToken = jwtDecode<TokenPayload>(token);
-      this.username = decodedToken.username;
-      console.log(decodedToken.username);
-      
+      this.username = decodedToken.username;      
       this.token = true;
     }
 

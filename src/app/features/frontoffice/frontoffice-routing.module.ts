@@ -13,7 +13,7 @@ const routes: Routes = [
     {path:'', component:HomeComponent},
     {path:'store', component:StoreComponent},
     {path:'checkout', component: CheckoutComponent, canActivate:[authGuard]},
-    {path:'product-detail', component: ProductDetailComponent},
+    {path:'product-detail/:id', component: ProductDetailComponent},
     {path:'cart', component:CartComponent}
   ]},
 

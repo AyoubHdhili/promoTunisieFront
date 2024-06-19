@@ -11,6 +11,7 @@ import { ProductDetailComponent } from 'src/app/pages/frontoffice/product-detail
 import { StoreComponent } from 'src/app/pages/frontoffice/store/store.component';
 import { CartComponent } from 'src/app/pages/frontoffice/cart/cart.component';
 import { ThankyouComponent } from 'src/app/pages/frontoffice/thankyou/thankyou.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ThankyouComponent } from 'src/app/pages/frontoffice/thankyou/thankyou.c
   ],
   imports: [
     CommonModule,
-    FrontofficeRoutingModule
+    FrontofficeRoutingModule,
+    FormsModule
   ]
 })
 export class FrontofficeModule { }

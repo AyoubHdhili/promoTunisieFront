@@ -6,5 +6,7 @@ export class Product {
     category!: string;
     images!: string[];
     stock!: number;
+    discount!:number;
     reviews!: string[];
+    createdAt!:Date;
   }

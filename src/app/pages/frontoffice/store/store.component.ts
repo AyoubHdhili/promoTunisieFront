@@ -11,14 +11,25 @@ import { CartService } from 'src/app/services/cartservice/cart.service';
 export class StoreComponent implements OnInit{
 
   products:Product[] = [];
+  currentDate!: Date;
+  categories: string[] = [];
 
   constructor(private productService: ProductService, private cartService:CartService){}
 
   ngOnInit(): void {
+    this.currentDate = new Date();
     this.productService.getProducts().subscribe((res) =>{
       this.products = res;
-      
+      res.map(p=>{
+        if(this.categories.includes(p.category) === false ){
+          this.categories.push(p.category);
+        }
+      });
     })
+  }
+
+  getCount(category: string): number {
+    return this.products.filter(p => p.category === category).length;
   }
 
   addToCart(id: string) {    
