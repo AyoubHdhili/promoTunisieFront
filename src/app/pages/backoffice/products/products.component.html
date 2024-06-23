@@ -1,13 +1,13 @@
 <div class="container">
-  <h2>Products List</h2>
+  <h2>Liste des Produits</h2>
 
   <table class="product-table">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Description</th>
-        <th>Category</th>
+        <th>Nom</th>
+        <th>Prix</th>
+        <th>marque</th>
+        <th>Categorie</th>
         <th>Stock</th>
         <th>Actions</th>
       </tr>
@@ -16,7 +16,7 @@
       <tr *ngFor="let product of products">
         <td>{{ product.name }}</td>
         <td>{{ product.price | currency }}</td>
-        <td>{{ product.description }}</td>
+        <td>{{ product.marque }}</td>
         <td>{{ product.category }}</td>
         <td>{{ product.stock }}</td>
         <td class="actions">

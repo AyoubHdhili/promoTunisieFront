@@ -4,6 +4,7 @@ export class Product {
     price!: number;
     description!: string;
     category!: string;
+    marque!:string;
     images!: string[];
     stock!: number;
     discount!:number;

@@ -1,42 +1,48 @@
 <div class="container">
-  <h2>Products</h2>
   <div class="form-container">
     <h2>Ajouter Produit</h2>
     <form (ngSubmit)="addProduct()" enctype="multipart/form-data">
       <!-- Other form fields -->
       <div class="form-group">
         <label for="name">Nom</label>
-        <input [(ngModel)]="newProduct.name" id="name" name="name" type="text" placeholder="Nom du produit" required>
+        <input [(ngModel)]="newProduct.name" id="name" name="name" type="text" placeholder="Nom du produit" required class="form-control">
       </div>
-      <div class="form-group">
+      <div data-mdb-input-init class="form-group">
         <label for="price">Prix</label>
-        <input [(ngModel)]="newProduct.price" id="price" name="price" type="number" placeholder="Prix du produit" required>
+        <input [(ngModel)]="newProduct.price" id="price" name="price" type="number" placeholder="Prix du produit" required class="form-control">
       </div>
       <div class="form-group">
         <label for="description">Description</label>
-        <textarea class="form-control" [(ngModel)]="newProduct.description" id="description" name="description" placeholder="Enter product description" rows="4" required></textarea>
+        <textarea class="form-control" [(ngModel)]="newProduct.description" id="description" name="description" placeholder="Entrer une description du produit" rows="4" required></textarea>
       </div>
       <div class="form-group">
         <label for="category">Categorie</label>
-        <input [(ngModel)]="newProduct.category" id="category" name="category" type="text" placeholder="Enter product category" required>
+        <input [(ngModel)]="newProduct.category" id="category" name="category" type="text" placeholder="Entrer une category de produit" required class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="category">Marque</label>
+        <input [(ngModel)]="newProduct.marque" id="marque" name="marque" type="text" placeholder="Entrer une marque de produit" required class="form-control">
       </div>
       <div class="form-group">
         <label for="stock">Stock</label>
-        <input [(ngModel)]="newProduct.stock" id="stock" name="stock" type="number" placeholder="Enter product stock" required>
+        <input [(ngModel)]="newProduct.stock" id="stock" name="stock" type="number" placeholder="Enter product stock" class="form-control" required>
       </div>
       <div class="form-group">
         <label>Image de produit</label>
         <div class="image-upload">
-          <input type="file" multiple (change)="onFilesChange($event)">
+          <input type="file" multiple (change)="onFilesChange($event)" [disabled]="isFileSelected">
           <div class="image-uploads">
             <img src="assets/admin/img/icons/upload.svg" alt="img">
-            <h4>Drag and drop files to upload</h4>
+            <h4 *ngIf="selectedFiles.length === 0">Drag and drop files to upload</h4>
+            <h4 *ngIf="selectedFiles.length > 0"> {{selectedFiles[0].name}}</h4>
           </div>
         </div>
       </div>
-      <button type="submit" class="add-btn">
-        <i class="fas fa-plus-circle"></i> Add Product
-      </button>
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary" data-mdb-ripple-init>
+          <i class="fas fa-plus-circle"></i> Add Product
+        </button>
+      </div>
     </form>
   </div>
 </div>

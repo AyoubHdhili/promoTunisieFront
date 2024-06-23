@@ -14,11 +14,14 @@ export class ProductBackAddComponent implements OnInit {
     price: 0,
     description: '',
     category: '',
+    marque: '',
     stock: 0,
     reviews: []
   };
 
   selectedFiles: File[] = [];
+  isFileSelected = false;
+
 
   constructor(private productService: ProductService, private router: Router) { }
 
@@ -32,6 +35,11 @@ export class ProductBackAddComponent implements OnInit {
 
   onFilesChange(event: any): void {
     this.selectedFiles = event.target.files;
+    if (this.selectedFiles.length > 0) {
+      this.isFileSelected = true;
+    } else {
+      this.isFileSelected = false;
+    }
   }
 
   addProduct(): void {
@@ -40,12 +48,14 @@ export class ProductBackAddComponent implements OnInit {
     formData.append('price', this.newProduct.price.toString());
     formData.append('description', this.newProduct.description);
     formData.append('category', this.newProduct.category);
+    formData.append('marque', this.newProduct.marque);
     formData.append('stock', this.newProduct.stock.toString());
 
     Array.from(this.selectedFiles).forEach((file, index) => {
       formData.append('images', file, file.name);
     });
-
+    console.log(formData);
+    
     if (this.newProduct._id) {
       this.productService.updateProduct(this.newProduct._id, formData).subscribe(
         response => {
