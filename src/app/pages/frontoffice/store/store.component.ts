@@ -51,8 +51,19 @@ decrementLower() {
     this.lowerPrice--;
   }
 }
+
 incrementLower() {
 this.lowerPrice++;
+}
+
+incrementMax(){
+this.higherPrice++;
+}
+
+decrementMax(){
+  if(this.higherPrice > 0){
+    this.higherPrice--;
+  }
 }
 
   products:Product[] = [];

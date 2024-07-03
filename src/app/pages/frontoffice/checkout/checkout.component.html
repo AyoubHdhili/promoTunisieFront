@@ -84,11 +84,15 @@
 							</div>
 							<div class="order-col">
 								<div>Livraison</div>
-								<div><strong>Gratuit</strong></div>
+								<div><strong>7DT</strong></div>
+							</div>
+							<div class="order-col">
+								<div>TVA (19%)</div>
+								<div>{{cartTotal * 0.19}}TND</div>
 							</div>
 							<div class="order-col">
 								<div><strong>TOTAL</strong></div>
-								<div><strong class="order-total">{{cartTotal}}TND</strong></div>
+								<div><strong class="order-total">{{cartTotal * 1.19}}TND</strong></div>
 							</div>
 						</div>
 						<div class="payment-method">
@@ -110,7 +114,7 @@
 								I've read and accept the <a href="#">terms & conditions</a>
 							</label>
 						</div>-->
-						<a href="#" class="primary-btn order-submit" (click)="oncheckout()">Placer une commande</a>
+						<a class="primary-btn order-submit" (click)="oncheckout()">Placer une commande</a>
 					</div>
 					<!-- /Order Details -->
 				</div>

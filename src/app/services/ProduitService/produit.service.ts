@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/core/product';
 
@@ -37,4 +37,16 @@ export class ProductService {
   getProductWithCateory(category:string): Observable<Product>{
     return this.http.get<Product>(`${this.apiUrl}/${category}`);
   }
+
+  downloadInvoice(invoiceData: any): Observable<Blob> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    return this.http.post(`${this.apiUrl}/facture`, invoiceData, { headers: headers, responseType: 'blob' });
+  }
+
+  downloadFile(filename: string): Observable<Blob> {
+    const url = `${this.apiUrl}/download/${filename}`;
+    return this.http.get(url, { responseType: 'blob' });
+}
 }

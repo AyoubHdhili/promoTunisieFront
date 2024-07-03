@@ -20,7 +20,7 @@
             <tbody>
             <tr *ngFor="let c of cartData.data; let i=index">
               <td class="d-flex align-items-center justify-content-around" >
-                <img [src]="'http://localhost:3000/uploads/' + c.product.images[0]" alt="{{c.product.name}}" height="60" class="order-1">
+                <img [src]="'http://localhost:3000/uploads/' + c.product.images[0]" alt="{{c.product.name}}" height="60" class="img-fluid" alt=""  style="width: 100%; height: 200px; object-fit: cover;">
                 <span class="text-danger" style="cursor: pointer;"><i class="fa fa-trash" (click)="cartService.deleteProductFromCart(i)"></i></span>
               </td>
               <td><p>{{c.product.name}}</p></td>
