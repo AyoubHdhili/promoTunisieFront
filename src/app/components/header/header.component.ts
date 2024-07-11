@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { jwtDecode } from 'jwt-decode';
+import { ToastrService } from 'ngx-toastr';
 import { CartServer } from 'src/app/core/cart';
 import { CartService } from 'src/app/services/cartservice/cart.service';
 
@@ -27,7 +28,7 @@ export class HeaderComponent implements OnInit{
   cartData: CartServer = new CartServer();
   cartTotal: number = 0;
 
-  constructor(public cartService: CartService){}
+  constructor(public cartService: CartService, private toast: ToastrService){}
 
   ngOnInit(): void {
     const token = sessionStorage.getItem('token');
@@ -45,6 +46,10 @@ export class HeaderComponent implements OnInit{
       sessionStorage.clear();
       localStorage.clear();
       this.token = false;
+      this.toast.warning("See you soon !", "Vous etês déconnecté!", {
+        timeOut: 5000,
+        positionClass:'toast-top-right'
+      })
     }
 
 

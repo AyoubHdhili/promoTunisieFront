@@ -18,7 +18,7 @@ export class SigninComponent {
   submit() {
     this.authService.SignIn(this.user.email, this.user.password).subscribe((res) => {
       sessionStorage.setItem('token', res.token);
-      this.toast.success("welcome to promoTunisie", "Signed in successfully!", {
+      this.toast.success("welcome to promoTunisie", "connecté avec succés!", {
         timeOut: 5000,
         positionClass:'toast-top-right'
       })
@@ -26,7 +26,7 @@ export class SigninComponent {
       if(token.role === 'Client'){
       this.router.navigate(['']);
       } else{
-        this.router.navigate(['/dashboard/home']);
+        this.router.navigate(['/dashboard/product']);
       }
     },(err) => {
       this.toast.error( "verify email or password !!", "Login Failed", {
